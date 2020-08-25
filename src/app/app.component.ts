@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookService } from './book.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'practice2';
+  softbook:Book[];
+  constructor(private bookservice:BookService){}
+  getsoftbook()
+  {
+    this.bookservice.getBooksfromStore().subscribe(book)
+  }
 }
